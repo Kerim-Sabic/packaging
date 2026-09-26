@@ -27,3 +27,9 @@ Local history is mutable browser data, not a tamper-proof audit. Source matching
 The generated artwork is static and illustrative; edited values are authoritative only in the live app/reveals and current-data reports. All masses, costs and projected reductions in bundled cases are explicitly illustrative.
 
 Final presentation browser was reset to the original three demonstration cases and verified at 4.6 g. A three-page investor discussion PDF and current-data illustrative supplier brief were also exported. The offline ZIP is integrity-checked; the frontend-only runtime was exercised on this workstation, not on a second machine.
+
+## Image-only pitch revision
+
+Replaced all pitch reveal/manual/demo screens with one generated artwork per slide. Removed the print-mode toggle and text backup panel from the pitch. Regenerated slide 2 with both total and virgin-plastic figures. The main application is unchanged. The earlier live-calculation PDF is a legacy artifact and is not included in the revised offline presentation kit.
+
+The revised pitch passed production build and browser checks: Next advanced slide 1→2, Right advanced 2→3, End selected 7 with Next disabled, and a newly opened presenter synchronized at slide 7. Slide 2 artwork was visually checked at presentation size.

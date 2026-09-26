@@ -1,5 +1,9 @@
 # Motion checklist
 
+## Current pitch update
+
+At the user’s request the pitch now contains only seven generated artworks with a simple crossfade, one slide per step. All M1–M8 interactions remain in the separate application; previous pitch-reveal references below record the earlier version and no longer describe presentation navigation. Presenter notes and image-only printing are retained.
+
 Observed on this Windows workstation in Chromium at 1440 × 1000. Motion communicates a state transition; calculations remain authoritative. Motion library respects user preferences; an explicit reduced-motion control is available in the pitch. No timed render or performance benchmark is claimed.
 
 | Sequence | Location and trigger | Implementation / observed result |

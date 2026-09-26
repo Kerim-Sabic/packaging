@@ -33,7 +33,7 @@ Create, duplicate and edit cases; compare multiple candidates; edit component an
 
 Local PDF/text extraction creates proposals with exact page-associated passages. A human can accept, correct, reject or leave them unresolved. Existing values require explicit replacement confirmation. Accepted values reference a new evidence record. Proposals remain separate in versioned browser storage. Synthetic sources stay illustrative even when accepted.
 
-The pitch uses the same TypeScript domain engine and application components. Its demonstration state is isolated from saved cases. Seven AI-generated illustrated main slides, live interactive calculation reveals, and eleven expandable backup topics. The artwork is a static illustrative narrative; live reveals use the domain engine. Keyboard and manual interaction, presenter controls, fullscreen, reduced motion and print fallback are provided.
+The pitch is entirely image-generated: seven full-slide artworks, including all text, with a simple crossfade. Every Next or arrow press advances one slide. There are no live calculation screens or reveal steps in the pitch. The comparison artwork includes both total and virgin plastic values. The working app is separate. Keyboard navigation, synchronized presenter notes, fullscreen, reduced motion and an image-only print/PDF view are provided.
 
 ## Offline / different laptop
 

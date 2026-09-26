@@ -1057,3 +1057,5 @@ textarea:focus-visible {
 .workspace .trial-test.failed { background: var(--terracotta-soft); }
 .workspace .history-dot { background: var(--green); }
 .workspace .caption, .workspace .axis { color: var(--muted); }
+
+.pitch-controls .primary:not(:disabled):hover { background: var(--citron); color: var(--green); border-color: var(--citron); }
