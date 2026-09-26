@@ -1,0 +1,7 @@
+SYNTHETIC DEMO DOCUMENT — NOT A SUPPLIER DECLARATION.
+Document DEMO-02, version 2, 26 September 2026.
+Exact tray SKU: PP-DEMO-016. Material: PET tray.
+Tray total mass: 18 g. Tray plastic mass: 18 g.
+This contradicts the 16 g value in DEMO-01; supplier resolution is required.
+Guaranteed minimum tray recycled-plastic content: 90% by mass, post-consumer. This percentage excludes the lid.
+No temperature, duration or lid recycled-content value is provided in this revision.

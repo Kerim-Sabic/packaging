@@ -1,0 +1,309 @@
+{
+  "mode": "Live local extraction",
+  "model": "Qwen3-8B-Q5_K_M",
+  "version": "packproof-extract-v1.3",
+  "proposals": [
+    {
+      "fieldName": "sku",
+      "value": "PP-DEMO-016",
+      "unit": "",
+      "scope": "Tray",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Exact tray SKU: PP-DEMO-016.",
+      "status": "supported_proposal",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "material",
+      "value": "PET",
+      "unit": "",
+      "scope": "Tray",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Material: PET tray.",
+      "status": "conflicting",
+      "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
+    },
+    {
+      "fieldName": "total_mass",
+      "value": "16",
+      "unit": "g",
+      "scope": "Tray",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Tray total mass: 16 g.",
+      "status": "conflicting",
+      "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
+    },
+    {
+      "fieldName": "plastic_mass",
+      "value": "16",
+      "unit": "g",
+      "scope": "Tray",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Tray plastic mass: 16 g.",
+      "status": "conflicting",
+      "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
+    },
+    {
+      "fieldName": "recycled_percent",
+      "value": "90",
+      "unit": "%",
+      "scope": "Tray",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Guaranteed minimum tray recycled-plastic content: 90% by mass, post-consumer.",
+      "status": "supported_proposal",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "sku",
+      "value": "PP-DEMO-L03",
+      "unit": "",
+      "scope": "Lid",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Lid SKU: PP-DEMO-L03.",
+      "status": "supported_proposal",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "total_mass",
+      "value": "3",
+      "unit": "g",
+      "scope": "Lid",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Lid total mass: 3 g.",
+      "status": "supported_proposal",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "plastic_mass",
+      "value": "3",
+      "unit": "g",
+      "scope": "Lid",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Lid plastic mass: 3 g.",
+      "status": "supported_proposal",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "recycled_percent",
+      "value": null,
+      "unit": "%",
+      "scope": "Lid",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Lid recycled content is not stated.",
+      "status": "not_found",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "temperature",
+      "value": "220",
+      "unit": "C",
+      "scope": "Tray",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Illustrative tray contact limit: 220 C for a maximum duration of 2 h.",
+      "status": "supported_proposal",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "duration",
+      "value": "2",
+      "unit": "h",
+      "scope": "Tray",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Illustrative tray contact limit: 220 C for a maximum duration of 2 h.",
+      "status": "supported_proposal",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "use_scope",
+      "value": "ready-meal tray",
+      "unit": "",
+      "scope": "Tray",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Use scope: ready-meal tray.",
+      "status": "conflicting",
+      "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
+    },
+    {
+      "fieldName": "version",
+      "value": "1",
+      "unit": "",
+      "scope": "Document",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Document DEMO-01, version 1, 26 September 2026.",
+      "status": "conflicting",
+      "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
+    },
+    {
+      "fieldName": "limitations",
+      "value": "Functional equivalence and food-contact documentation are not established by this demo.",
+      "unit": "",
+      "scope": "Document",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Functional equivalence and food-contact documentation are not established by this demo.",
+      "status": "supported_proposal",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "recycled_percent",
+      "value": "100",
+      "unit": "%",
+      "scope": "Marketing family",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Marketing family claim: up to 100% recycled content; this is not a guaranteed SKU value.",
+      "status": "ambiguous",
+      "reviewNote": "An upper bound or recyclability claim is not guaranteed recycled content."
+    },
+    {
+      "fieldName": "limitations",
+      "value": "Lid must be removed before heating.",
+      "unit": "",
+      "scope": "Tray",
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Lid must be removed before heating.",
+      "status": "supported_proposal",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "sku",
+      "value": "PP-DEMO-016",
+      "unit": "",
+      "scope": "Exact tray",
+      "documentId": "82596d135f858abd",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Exact tray SKU: PP-DEMO-016.",
+      "status": "supported_proposal",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "material",
+      "value": "PET tray",
+      "unit": "",
+      "scope": "Tray",
+      "documentId": "82596d135f858abd",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Material: PET tray.",
+      "status": "conflicting",
+      "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
+    },
+    {
+      "fieldName": "total_mass",
+      "value": "18",
+      "unit": "g",
+      "scope": "Tray",
+      "documentId": "82596d135f858abd",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Tray total mass: 18 g.",
+      "status": "conflicting",
+      "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
+    },
+    {
+      "fieldName": "plastic_mass",
+      "value": "18",
+      "unit": "g",
+      "scope": "Tray",
+      "documentId": "82596d135f858abd",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Tray plastic mass: 18 g.",
+      "status": "conflicting",
+      "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
+    },
+    {
+      "fieldName": "recycled_percent",
+      "value": "90",
+      "unit": "%",
+      "scope": "Tray",
+      "documentId": "82596d135f858abd",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Guaranteed minimum tray recycled-plastic content: 90% by mass, post-consumer.",
+      "status": "supported_proposal",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "recycled_percent",
+      "value": null,
+      "unit": "%",
+      "scope": "Lid",
+      "documentId": "82596d135f858abd",
+      "pageNumber": 1,
+      "verbatimSupportingText": "This percentage excludes the lid.",
+      "status": "not_found",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "temperature",
+      "value": null,
+      "unit": "C",
+      "scope": "Tray",
+      "documentId": "82596d135f858abd",
+      "pageNumber": 1,
+      "verbatimSupportingText": "No temperature, duration or lid recycled-content value is provided in this revision.",
+      "status": "not_found",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "duration",
+      "value": null,
+      "unit": "h",
+      "scope": "Tray",
+      "documentId": "82596d135f858abd",
+      "pageNumber": 1,
+      "verbatimSupportingText": "No temperature, duration or lid recycled-content value is provided in this revision.",
+      "status": "not_found",
+      "reviewNote": ""
+    },
+    {
+      "fieldName": "use_scope",
+      "value": "Tray",
+      "unit": "",
+      "scope": "Tray",
+      "documentId": "82596d135f858abd",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Guaranteed minimum tray recycled-plastic content: 90% by mass, post-consumer.",
+      "status": "conflicting",
+      "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
+    },
+    {
+      "fieldName": "version",
+      "value": "2",
+      "unit": "",
+      "scope": "Document",
+      "documentId": "82596d135f858abd",
+      "pageNumber": 1,
+      "verbatimSupportingText": "Document DEMO-02, version 2, 26 September 2026.",
+      "status": "conflicting",
+      "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
+    }
+  ],
+  "pages": [
+    {
+      "documentId": "5ad317e89bd5427a",
+      "pageNumber": 1,
+      "text": "SYNTHETIC DEMO DOCUMENT — NOT A SUPPLIER DECLARATION.\nDocument DEMO-01, version 1, 26 September 2026.\nExact tray SKU: PP-DEMO-016. Material: PET tray.\nTray total mass: 16 g. Tray plastic mass: 16 g.\nGuaranteed minimum tray recycled-plastic content: 90% by mass, post-consumer. This percentage excludes the lid.\nLid SKU: PP-DEMO-L03. Lid total mass: 3 g. Lid plastic mass: 3 g.\nLid recycled content is not stated.\nIllustrative tray contact limit: 220 C for a maximum duration of 2 h. Lid must be removed before heating.\nUse scope: ready-meal tray. Functional equivalence and food-contact documentation are not established by this demo.\nMarketing family claim: up to 100% recycled content; this is not a guaranteed SKU value.\n"
+    },
+    {
+      "documentId": "82596d135f858abd",
+      "pageNumber": 1,
+      "text": "SYNTHETIC DEMO DOCUMENT — NOT A SUPPLIER DECLARATION.\nDocument DEMO-02, version 2, 26 September 2026.\nExact tray SKU: PP-DEMO-016. Material: PET tray.\nTray total mass: 18 g. Tray plastic mass: 18 g.\nThis contradicts the 16 g value in DEMO-01; supplier resolution is required.\nGuaranteed minimum tray recycled-plastic content: 90% by mass, post-consumer. This percentage excludes the lid.\nNo temperature, duration or lid recycled-content value is provided in this revision.\n"
+    }
+  ],
+  "omitted": [],
+  "warnings": [],
+  "complete": true,
+  "error": null
+}
