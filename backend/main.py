@@ -15,7 +15,7 @@ MODEL_URL = os.getenv('MODEL_URL', 'http://127.0.0.1:8080').rstrip('/')
 if urlparse(MODEL_URL).hostname not in ('127.0.0.1', 'localhost', '::1'):
     raise RuntimeError('MODEL_URL must be loopback: documents cannot leave this machine.')
 MODEL_ID = os.getenv('MODEL_ID', 'Qwen3-8B-Q5_K_M')
-VERSION = 'packproof-extract-v1.3'
+VERSION = 'packproof-extract-v1.6'
 CONFIG = {'pages': 30, 'chunks': 8, 'chunk_chars': 6000, 'max_bytes': 20*1024*1024}
 app = FastAPI(title='PackProof local review')
 app.add_middleware(CORSMiddleware, allow_origins=['http://127.0.0.1:4173', 'http://127.0.0.1:5173'], allow_methods=['GET','POST','DELETE'], allow_headers=['Content-Type'])
@@ -43,7 +43,11 @@ value is a string (numeric string for numeric fields) or null. unit is g, %, C, 
 Example: text "Tray total mass: 16 g." -> fieldName "total_mass", value "16", unit "g", scope "Tray", verbatimSupportingText "Tray total mass: 16 g.", status "supported_proposal".
 Example: text "Lid recycled content is not stated." -> fieldName "recycled_percent", value null, unit "%", scope "Lid", status "not_found".
 Example: text "Up to 100% recycled content." -> value "100", unit "%", scope "Marketing family", status "ambiguous", reviewNote "Upper bound, not guaranteed".
-Extract only what the text states. /no_think'''
+Examples above are format demonstrations, NEVER evidence. Do not copy example facts unless they appear in the supplied page. Table rows preserve label/value alignment; quote the actual row segment. Decimal commas may be converted to decimal points in numeric values but never alter the quotation. Distinguish minimum, maximum and storage temperatures in fieldName (temperature_min, temperature_max, storage_temperature_min, storage_temperature_max). Never treat range endpoints as conflicting facts. If recycled content is discussed without a percentage, return null/not_found rather than a guessed percentage. Return at most 12 relevant proposals per page. Prioritize exact SKU, pack component mass, recycled content, material, use limits, date/version. Do not enumerate absent properties of shipping cartons and liners. Keep quotations and review notes concise. /no_think'''
+
+def numeric_text(s):
+    # Decimal comma normalization only; grouping/locale ambiguity is left for review.
+    return re.sub(r'(?<=\d),(?=\d)', '.', s)
 
 def normalize(s):
     return ' '.join(s.split()).casefold()
@@ -58,8 +62,18 @@ def guard(proposals, pages):
         if not quote or quote not in normalize(text):
             p.status = 'ambiguous'; p.reviewNote = 'Unsupported quotation: not found on this page. Cannot accept.'
             continue
-        if p.value and re.fullmatch(r'\d+(?:\.\d+)?', p.value) and not re.search(r'(?<![\d.])'+re.escape(p.value)+r'(?![\d.])', p.verbatimSupportingText):
+        if p.value and re.fullmatch(r'[+-]?\d+(?:[.,]\d+)?', p.value) and not re.search(r'(?<![\d.+-])'+re.escape(numeric_text(p.value))+r'(?![\d.])', numeric_text(p.verbatimSupportingText)):
             p.status = 'ambiguous'; p.reviewNote = 'Numeric value is not present in the source passage.'
+        if p.value and re.fullmatch(r'\d+,\d{1,2}', p.value):
+            p.value = numeric_text(p.value)
+        if 'temperature' in p.fieldName and not re.search(r'celsius|fahrenheit|(?:°|�)\s*[cf]\b|\b[cf]\b', quote):
+            p.status = 'ambiguous'; p.reviewNote = 'Temperature unit is not supported by this passage. A humidity percentage is not a temperature.'
+        if 'mass' in p.fieldName and p.value is not None and p.unit == 'g' and not re.search(r'\bg\b|\bgrams?\b', quote):
+            p.status = 'ambiguous'; p.reviewNote = 'Gram unit is not supported by this passage. Correct units explicitly.'
+        if 'recycled' in p.fieldName and p.value is not None and not re.search(r'recycled|\bpcr\b|\brpet\b|post.consumer|pre.consumer', quote):
+            p.status = 'ambiguous'; p.reviewNote = 'Recycled-content scope is not supported by this passage.'
+        if p.fieldName == 'version' and p.value is not None and not re.search(r'version|revision|\brev\b|\b\d{1,4}[-/.]\d{1,2}[-/.]\d{1,4}\b', quote):
+            p.status = 'ambiguous'; p.reviewNote = 'Document version/date is not established by this passage; a product name is not a revision.'
         if 'recycled' in p.fieldName and ('up to' in quote or 'recyclable' in quote and 'recycled' not in quote):
             p.status = 'ambiguous'; p.reviewNote = 'An upper bound or recyclability claim is not guaranteed recycled content.'
     # Cross-document contradictions only for the same normalized field + component scope.
@@ -98,7 +112,7 @@ async def infer(chunk):
     messages = [{'role':'system','content':PROMPT},{'role':'user','content':json.dumps(chunk)}]
     async with httpx.AsyncClient(timeout=90,trust_env=False) as client:
         for attempt in range(2):
-            response = await client.post(MODEL_URL+'/v1/chat/completions',json={'model':MODEL_ID,'messages':messages,'temperature':0.1,'max_tokens':3000,'chat_template_kwargs':{'enable_thinking':False},'response_format':{'type':'json_schema','json_schema':{'name':'packaging_facts','strict':True,'schema':Output.model_json_schema()}}})
+            response = await client.post(MODEL_URL+'/v1/chat/completions',json={'model':MODEL_ID,'messages':messages,'temperature':0.1,'max_tokens':4000,'chat_template_kwargs':{'enable_thinking':False},'response_format':{'type':'json_schema','json_schema':{'name':'packaging_facts','strict':True,'schema':Output.model_json_schema()}}})
             response.raise_for_status()
             content = response.json()['choices'][0]['message']['content']
             try: return Output.model_validate_json(content).proposals
@@ -134,7 +148,8 @@ async def extract(request: Request, files: list[UploadFile] = File(...)):
                     if i>=CONFIG['pages']: omitted.append(f'{docid}: page {i+1} (page limit)'); continue
                     if len(page.get_contents().get_data())>2_000_000 if page.get_contents() else False:
                         omitted.append(f'{docid}: page {i+1} (oversized content stream)'); continue
-                    text=page.extract_text() or ''
+                    layout=page.extract_text(extraction_mode='layout') or ''
+                    text='\n'.join(re.sub(r'[ \t]+', ' ', line).strip() for line in layout.splitlines() if line.strip())
                     if len(text.strip())<30:
                         warnings.append(f'{docid}: page {i+1} needs OCR. OCR is not installed; paste text or supply a searchable PDF.'); omitted.append(f'{docid}: page {i+1} (OCR required)')
                     else:

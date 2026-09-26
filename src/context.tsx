@@ -95,6 +95,14 @@ export function RealContext({ onOpenCase }: { onOpenCase: () => void }) {
       </div>
       <div className="reference-grid">
         <article>
+          <div className="eyebrow">LOCAL AI / PUBLISHED TEST RECORD</div>
+          <h3>Test the evidence. Show the limits.</h3>
+          <p>Two public, three-page product sheets. Twelve specified target checks matched: item, mass, material, temperature and preservation of missing values.</p>
+          <div className="reference-meaning">Real documents exposed table-layout and unit errors. We added checks and recorded the failures as well as the final result.</div>
+          <small>Same manufacturer and similar layouts, used during development. This is a narrow regression test, not general extraction accuracy or supplier validation.</small>
+          <a href="./resources/public-document-test.txt" target="_blank" rel="noreferrer">Read the test record and source links <ArrowUpRight size={15}/></a>
+        </article>
+        <article>
           <div className="eyebrow">EXACT PRODUCT / PUBLIC REVIEW</div>
           <h3>A real SKU. An honest evidence gap.</h3>
           <p>Faerch C 2200-2S · item 2200022012. The January 2023 sheet lists a 21.38 g tray (±10%), 900 ml capacity and a 220°C maximum.</p>

@@ -73,6 +73,7 @@ export type PilotTest = {
   status: "Not run" | "Passed" | "Failed";
 };
 export type PilotPlan = {
+  observations?: { baselineId: string; candidateId: string; baselineUnits: Num; baselineRejected: Num; candidateUnits: Num; candidateRejected: Num; reference: string };
   procurementOwner: string;
   qualityOwner: string;
   operationsOwner: string;
@@ -118,6 +119,9 @@ export function defaultPilot(): PilotPlan {
 }
 export function pilotStatus(k: Case, c: Candidate) {
   const p = k.pilot;
+  const o = p?.observations;
+  if (o && o.baselineId === k.baseline && o.candidateId === c.id && o.baselineUnits && o.candidateUnits && o.baselineRejected !== null && o.candidateRejected !== null && o.candidateRejected / o.candidateUnits > o.baselineRejected / o.baselineUnits)
+    return "Hold — observed rejection rate increased";
   if (
     checks(k, c).some((x) => x.state === "Mismatch") ||
     p?.tests.some((x) => x.status === "Failed")
@@ -448,6 +452,17 @@ export function validate(k: Case) {
       if (typeof p[key] !== "string") throw Error("Invalid pilot plan");
     n(p.trialUnits, "trial units");
     n(p.budget, "pilot budget");
+    if (p.observations) {
+      const o = p.observations;
+      if (typeof o.baselineId !== 'string' || typeof o.candidateId !== 'string') throw Error('Invalid trial candidate reference');
+      if (typeof o.reference !== 'string') throw Error('Invalid trial evidence reference');
+      for (const key of ['baselineUnits', 'baselineRejected', 'candidateUnits', 'candidateRejected'] as const) {
+        n(o[key], 'observed sample count');
+        if (o[key] !== null && !Number.isInteger(o[key])) throw Error('Trial counts must be whole numbers');
+      }
+      if ((o.baselineUnits !== null && o.baselineRejected !== null && o.baselineRejected > o.baselineUnits) || (o.candidateUnits !== null && o.candidateRejected !== null && o.candidateRejected > o.candidateUnits))
+        throw Error('Rejected packs cannot exceed tested packs');
+    }
     if (!Array.isArray(p.tests) || p.tests.length > 50)
       throw Error("Invalid pilot tests");
     for (const t of p.tests) {

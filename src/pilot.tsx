@@ -20,6 +20,7 @@ import {
   fmt,
 } from "./domain";
 import { NumberInput } from "./components";
+import { TrialResults } from './trial';
 export function PilotEditor({
   k,
   c,
@@ -127,6 +128,7 @@ export function PilotEditor({
           <Plus size={15} /> Add trial check
         </button>
       </div>
+      <TrialResults k={k} c={c} p={p} update={update}/>
       <div className="test-list">
         {p.tests.map((t, i) => {
           const edit = (patch: Partial<typeof t>) =>

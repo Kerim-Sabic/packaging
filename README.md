@@ -85,3 +85,9 @@ See `VERIFICATION.md` for observed results, `MOTION_CHECKLIST.md` for motion sta
 This is decision support, not packaging, food-safety, shelf-life or legal certification. A reviewed document does not independently prove a package fit for use. Screening uses human-entered scope/limits and evidence review, not a legal rules engine. Costs use one EUR scenario without tax, discounting or currency conversion. No full LCA or invented CO₂ factor. Trial owners must set operational acceptance limits, assess product loss, and resolve evidence gaps before a trial.
 
 The model can still misread context; quotation presence does not prove semantic correctness. Conflict detection is conservative and may flag wording/version differences. Long PDFs are bounded, not exhaustively reviewed. No OCR engine is bundled. GPU testing used Vulkan on one RTX 5080, not CUDA or pooled GPU memory.
+
+## Measured trial observations and public-document checks
+
+Pilot plan now records tested and rejected counts for the selected baseline/candidate. It compares rejection rates and entered virgin-plastic consumption per usable pack; a higher candidate rejection rate triggers a hold and a review action. Counts appear in the full brief and remain unknown until entered. These calculations exclude food-waste impact and do not certify equivalence.
+
+Real-world context links to PUBLIC_DOCUMENT_TEST.md: two public PDFs, twelve specified target checks, actual failures found and fixes made. Extraction v1.6 preserves table rows and adds decimal/unit/revision guards. Run the documented guard and public-document scripts to reproduce the bounded checks.

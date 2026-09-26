@@ -55,3 +55,7 @@ For a different installed CUDA build, inspect `--version`, `--help`, `--list-dev
 Documents do not leave the machine. Internet was used for dependencies, the official model download and deliberate primary-source verification. Uploaded files are processed in memory; extracted text/results are stored locally in `.local/cache` and browser proposal storage. Clear both through the UI. Model weights and caches are outside Git. No full document text is logged by default.
 
 If inference fails, use pasted/searchable text or manual entry; the app and pitch still work. The extraction result retains readable extracted pages on inference errors. On another laptop use the offline ZIP and labelled replay. OCR is deliberately not installed; scanned/empty pages produce an actionable message and are marked unprocessed. PDF processing is bounded but not a hardened hostile-file sandbox.
+
+## Latest verified extraction revision
+
+Version 1.6 adds layout-preserving PDF text, conservative numeric/unit guards, 12 requested proposals per page and a 4,000-token response cap. The original synthetic review passes (20 proposals in the refreshed recorded replay). Two public PDFs pass 12 specified target checks; see PUBLIC_DOCUMENT_TEST.md for sources, observed uncached times, failed intermediate attempts and strict scope limitations. Existing earlier figures describe earlier runs.

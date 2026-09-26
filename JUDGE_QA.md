@@ -53,3 +53,11 @@ Do one timed run with the seven images and the actual clicker. Aim for 2:50–3:
 ## Rubric coverage in the spoken script
 
 Environmental impact: slides 1–2 and 5. Retail practicality and technical feasibility: slides 3–4 and 6. Originality: slide 5. Business viability and scalability: slide 6. UX: explain source-to-next-action and demonstrate the working app if invited. Presentation: seven image-only slides, deliberate pacing, clear ask. No numerical judging score is predicted.
+
+## If asked: “Have you tested real documents?”
+
+“Yes. Two public manufacturer PDFs, six pages in total. Twelve specific target checks matched after we fixed table-layout and unit problems. Both documents have similar layouts and were used during development, so this is a narrow regression test, not a general accuracy claim. The complete record is available in the app.”
+
+## If asked: “What if packaging reduction increases waste?”
+
+“The pilot records comparable tested and rejected samples. A higher candidate rejection rate holds the review, even if the material number looks better. We also show packaging consumed per usable pack. Food loss and its wider environmental impact still require retailer measurement; we do not hide them inside a plastic-only calculation.”

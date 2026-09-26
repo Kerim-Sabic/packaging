@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { ArrowUpRight, FileText, X } from "lucide-react";
+import { TrialResults } from './trial';
 import {
   type Case,
   type Candidate,
@@ -675,6 +676,7 @@ export function Brief({
       {!compact && (
         <>
           <h3>Required tests & success criteria</h3>
+          {k.pilot && <TrialResults k={k} c={c} p={k.pilot} readonly />}
           <p>
             Procurement owner: {k.pilot?.procurementOwner || "to assign"}.
             Quality/food-safety owner: {k.pilot?.qualityOwner || "to assign"}.

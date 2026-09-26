@@ -34,3 +34,7 @@ Nine pilot checks cover component content, intended use, sealing, line performan
 **Later product work:** authenticated team access, roles, controlled storage, robust audit events, supplier-document versioning, portfolio analysis and procurement integrations. These are planned, not present capabilities.
 
 The app now adds branded generated imagery and an explicit comparison-to-trial review path. This makes evidence gaps and next actions visible without awarding a fictional readiness or judging score.
+
+## Additional environmental and technical proof
+
+Observed rejection-rate comparison now holds rollout review when product protection worsens. Full briefs show the same sample counts and material-per-usable-pack calculation. This supports trial design; no actual food-loss result is claimed. Real-document extraction has a reproducible two-PDF, twelve-target regression record, with discovered errors and limitations disclosed in PUBLIC_DOCUMENT_TEST.md. Neither feature removes the need for independent users, supplier confirmation or a retail trial.

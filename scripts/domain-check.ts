@@ -2,6 +2,7 @@ import { reviewProgress } from "../src/workflow";
 import assert from "node:assert/strict";
 import { demos } from "../src/data";
 import { publicCase } from '../src/public-case';
+import { trialMetrics } from '../src/trial';
 import {
   totals,
   reduction,
@@ -28,6 +29,22 @@ assert.equal(reviewProgress(sourcedCase, sourcedCandidate).sourced, 0, 'Public s
 assert.ok(checks(sourcedCase, sourcedCandidate).every(x => x.state === 'Unverified'));
 assert.equal(readStore(JSON.stringify({version: 1, cases: [sourcedCase]})).cases[0].candidates[1].components[0].mass, 21.38);
 const [a, b, c] = demos();
+assert.equal(trialMetrics(100, 10, 9).perUsable, 10);
+assert.equal(trialMetrics(100, 100, 9).perUsable, null);
+assert.equal(trialMetrics(0, 0, 9).rate, null);
+assert.equal(trialMetrics(100, null, 9).rate, null);
+assert.equal(trialMetrics(100, 10, null).perUsable, null);
+const observed = structuredClone(a);
+observed.pilot = defaultPilot();
+observed.pilot.observations = {baselineId: observed.baseline, candidateId: observed.selected, baselineUnits:100,baselineRejected:1,candidateUnits:100,candidateRejected:5,reference:'Synthetic test only'};
+validate(observed);
+assert.match(pilotStatus(observed, observed.candidates[2]), /Hold/);
+assert.equal(reviewProgress(observed, observed.candidates[2]).next.tab,'Pilot plan');
+assert.doesNotMatch(pilotStatus(observed, observed.candidates[1]), /Hold/);
+observed.pilot.observations.candidateRejected = 101;
+assert.throws(()=>validate(observed));
+observed.pilot.observations.candidateRejected = 1.5;
+assert.throws(()=>validate(observed));
 close(totals(a.candidates[0]).virgin, 17);
 close(totals(a.candidates[1]).virgin, 9);
 close(totals(a.candidates[2]).virgin, 4.6);

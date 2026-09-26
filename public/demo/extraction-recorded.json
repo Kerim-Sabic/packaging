@@ -1,7 +1,7 @@
 {
   "mode": "Live local extraction",
   "model": "Qwen3-8B-Q5_K_M",
-  "version": "packproof-extract-v1.3",
+  "version": "packproof-extract-v1.6",
   "proposals": [
     {
       "fieldName": "sku",
@@ -16,14 +16,14 @@
     },
     {
       "fieldName": "material",
-      "value": "PET",
+      "value": "PET tray",
       "unit": "",
       "scope": "Tray",
       "documentId": "5ad317e89bd5427a",
       "pageNumber": 1,
       "verbatimSupportingText": "Material: PET tray.",
-      "status": "conflicting",
-      "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
+      "status": "supported_proposal",
+      "reviewNote": ""
     },
     {
       "fieldName": "total_mass",
@@ -56,7 +56,7 @@
       "pageNumber": 1,
       "verbatimSupportingText": "Guaranteed minimum tray recycled-plastic content: 90% by mass, post-consumer.",
       "status": "supported_proposal",
-      "reviewNote": ""
+      "reviewNote": "Post-consumer scope"
     },
     {
       "fieldName": "sku",
@@ -132,8 +132,8 @@
       "documentId": "5ad317e89bd5427a",
       "pageNumber": 1,
       "verbatimSupportingText": "Use scope: ready-meal tray.",
-      "status": "conflicting",
-      "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
+      "status": "supported_proposal",
+      "reviewNote": ""
     },
     {
       "fieldName": "version",
@@ -147,17 +147,6 @@
       "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
     },
     {
-      "fieldName": "limitations",
-      "value": "Functional equivalence and food-contact documentation are not established by this demo.",
-      "unit": "",
-      "scope": "Document",
-      "documentId": "5ad317e89bd5427a",
-      "pageNumber": 1,
-      "verbatimSupportingText": "Functional equivalence and food-contact documentation are not established by this demo.",
-      "status": "supported_proposal",
-      "reviewNote": ""
-    },
-    {
       "fieldName": "recycled_percent",
       "value": "100",
       "unit": "%",
@@ -167,17 +156,6 @@
       "verbatimSupportingText": "Marketing family claim: up to 100% recycled content; this is not a guaranteed SKU value.",
       "status": "ambiguous",
       "reviewNote": "An upper bound or recyclability claim is not guaranteed recycled content."
-    },
-    {
-      "fieldName": "limitations",
-      "value": "Lid must be removed before heating.",
-      "unit": "",
-      "scope": "Tray",
-      "documentId": "5ad317e89bd5427a",
-      "pageNumber": 1,
-      "verbatimSupportingText": "Lid must be removed before heating.",
-      "status": "supported_proposal",
-      "reviewNote": ""
     },
     {
       "fieldName": "sku",
@@ -198,8 +176,8 @@
       "documentId": "82596d135f858abd",
       "pageNumber": 1,
       "verbatimSupportingText": "Material: PET tray.",
-      "status": "conflicting",
-      "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
+      "status": "supported_proposal",
+      "reviewNote": ""
     },
     {
       "fieldName": "total_mass",
@@ -230,53 +208,9 @@
       "scope": "Tray",
       "documentId": "82596d135f858abd",
       "pageNumber": 1,
-      "verbatimSupportingText": "Guaranteed minimum tray recycled-plastic content: 90% by mass, post-consumer.",
+      "verbatimSupportingText": "Guaranteed minimum tray recycled-plastic content: 90% by mass, post-consumer. This percentage excludes the lid.",
       "status": "supported_proposal",
       "reviewNote": ""
-    },
-    {
-      "fieldName": "recycled_percent",
-      "value": null,
-      "unit": "%",
-      "scope": "Lid",
-      "documentId": "82596d135f858abd",
-      "pageNumber": 1,
-      "verbatimSupportingText": "This percentage excludes the lid.",
-      "status": "not_found",
-      "reviewNote": ""
-    },
-    {
-      "fieldName": "temperature",
-      "value": null,
-      "unit": "C",
-      "scope": "Tray",
-      "documentId": "82596d135f858abd",
-      "pageNumber": 1,
-      "verbatimSupportingText": "No temperature, duration or lid recycled-content value is provided in this revision.",
-      "status": "not_found",
-      "reviewNote": ""
-    },
-    {
-      "fieldName": "duration",
-      "value": null,
-      "unit": "h",
-      "scope": "Tray",
-      "documentId": "82596d135f858abd",
-      "pageNumber": 1,
-      "verbatimSupportingText": "No temperature, duration or lid recycled-content value is provided in this revision.",
-      "status": "not_found",
-      "reviewNote": ""
-    },
-    {
-      "fieldName": "use_scope",
-      "value": "Tray",
-      "unit": "",
-      "scope": "Tray",
-      "documentId": "82596d135f858abd",
-      "pageNumber": 1,
-      "verbatimSupportingText": "Guaranteed minimum tray recycled-plastic content: 90% by mass, post-consumer.",
-      "status": "conflicting",
-      "reviewNote": "Different values in this review set. Check exact SKU, version and component scope; resolve manually."
     },
     {
       "fieldName": "version",

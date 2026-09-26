@@ -37,11 +37,11 @@ export function reviewProgress(k: Case, c: Candidate) {
         title: "Resolve the use mismatch",
         body: "The selected package conflicts with entered conditions. Resolve this before progressing toward a trial.",
       }
-    : failed
+    : failed || pilot.startsWith('Hold')
       ? {
           tab: "Pilot plan",
-          title: "Investigate the failed trial check",
-          body: "A failed result remains a stop condition until the responsible reviewers resolve it.",
+          title: "Investigate the trial result",
+          body: "A failed check or increased rejection rate requires review before rollout. Resolve product protection before claiming a benefit.",
         }
       : !materialComplete
         ? {
