@@ -1,8 +1,16 @@
+/* Shared presentation and product palette. */
 :root {
-  --paper: #f5f4f0;
-  --ink: #151816;
-  --green: #176b4a;
-  --muted: #71786c;
-  --line: #dfe2d7;
-  --white: #fafaf7;
+  --paper: #f5f3ed;
+  --white: #fcfbf7;
+  --ink: #171b17;
+  --green: #103b2c;
+  --citron: #deeba8;
+  --muted: #667062;
+  --line: #d8d9ce;
+  --sage: #b9c6b4;
+  --stone: #e8e5dc;
+  --forest-soft: #e8ede2;
+  --terracotta: #994d36;
+  --terracotta-soft: #f2e5dc;
+  --display: Georgia, "Times New Roman", serif;
 }

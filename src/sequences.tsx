@@ -48,7 +48,7 @@ export function ComponentSequence({ c }: { c: Candidate }) {
                   <rect
                     width={((p.plastic ?? 0) / scale) * 270}
                     height="23"
-                    fill={i % 2 ? "#6f8970" : "#176B4A"}
+                    fill={i % 2 ? "var(--sage)" : "var(--green)"}
                   />
                   <text x="3" y="16" fill="white" fontSize="10">
                     {fmt(p.plastic)}

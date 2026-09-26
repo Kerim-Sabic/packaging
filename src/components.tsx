@@ -72,7 +72,7 @@ export function Package({
       >
         <path
           d="M42 72 115 34 258 57 188 102Z"
-          fill="#DFE8E0"
+          fill="var(--forest-soft)"
           stroke="currentColor"
           strokeWidth="2"
         />
@@ -86,7 +86,7 @@ export function Package({
       {kind === "pouch" ? (
         <path
           d="M97 78 205 93 230 157 85 137Z"
-          fill="#DDD9CA"
+          fill="var(--stone)"
           stroke="currentColor"
           strokeWidth="2"
         />
@@ -97,7 +97,7 @@ export function Package({
         >
           <path
             d="M48 90 187 120 247 77 224 137 178 169 67 142Z"
-            fill="#C8D4C8"
+            fill="var(--sage)"
             stroke="currentColor"
             strokeWidth="2"
           />
@@ -113,7 +113,7 @@ export function Package({
         <>
           <path
             d="M220 36H285M232 147H285"
-            stroke="#176B4A"
+            stroke="var(--green)"
             strokeDasharray="3 3"
           />
           <text x="250" y="25" fontSize="13">
@@ -180,18 +180,18 @@ export function Comparison({
                 role="img"
                 aria-label={`${c.name}: ${fmt(value)} grams ${virgin ? "virgin" : "total"} plastic`}
               >
-                <rect width={600} height={46} y={11} fill="#e8e7df" />
+                <rect width={600} height={46} y={11} fill="var(--stone)" />
                 <motion.rect
                   y={11}
                   height={46}
-                  fill="#BBCBBE"
+                  fill="var(--sage)"
                   animate={{ width: ((t.plastic ?? 0) / scale) * 600 }}
                   transition={{ duration: 0.6 }}
                 />
                 <motion.rect
                   y={11}
                   height={46}
-                  fill={winner ? "#176B4A" : "#454E44"}
+                  fill={winner ? "var(--green)" : "var(--ink)"}
                   animate={{
                     width: (((virgin ? t.lo : t.plastic) ?? 0) / scale) * 600,
                   }}
