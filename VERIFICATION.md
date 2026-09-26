@@ -1,3 +1,11 @@
+# Public-source review and commercial proposal revision
+
+26 September 2026: inspected page 1 of the Faerch C 2200-2S PDF visually and checked page 3 text. Added an exact-SKU public review with unknown lid, plastic-only mass, recycled fraction, baseline and price. Domain checks confirm no inferred virgin mass, reduction, annual cost saving or supported use status; case round-trip retains the nominal mass. Full existing domain suite and production build passed.
+
+Browser verification: opened the public case from Real-world context; confirmed blank plastic/recycled fields; reloaded and reopened the saved case; all six use checks remained Unverified; reopening the source case left four cases (no duplicate). Updated component form sizing to contain long source identifiers and inspected the result. Pilot PDF route returned 200. Local AI health remained ready. Both pages of the new proposal PDF were rendered and visually inspected.
+
+No actual supplier validation, buyer interview, user study, retail trial or willingness-to-pay test has occurred. The public-document case is manually curated; it is not a new model-accuracy benchmark. The pricing, costs and success thresholds in PILOT_OFFER.md are proposed assumptions. No judging score is guaranteed.
+
 # Verification — 26 September 2026
 
 ## Environment actually used

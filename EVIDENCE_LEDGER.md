@@ -1,3 +1,9 @@
+# Public exact-product review added 26 September 2026
+
+Faerch C 2200-2S Evolve CPET, item 2200022012, recipe 6811. Manufacturer-authored sheet hosted by a distributor, dated 9 January 2023. [Public PDF](https://verkkokauppa.daytongroup.fi/PDF%20Files/Product%20Sheets/Faerch%20Trays/Faerch%20C%202200-2S%20Product%20Sheet.pdf). Page 1 visually checked: nominal tray mass 21.38 g ±10%, capacity 900 ml across two compartments, maximum temperature 220°C. Page 3 does not establish a guaranteed recycled fraction and requests current recipe information through the supplier.
+
+The app's **Real-world context → Open sourced SKU review** loads these facts without overwriting saved work. Tray-only nominal mass is recorded; plastic-only mass, recycled fraction, lid and baseline remain unknown. No annual saving, current-use approval, supplier relationship or actual recycling is inferred. The nominal mass tolerance is retained in notes, not silently used as a verified mass. This public-source review is separate from all three illustrative cases. The source is linked, not redistributed.
+
 # Evidence ledger
 
 Checked 26 September 2026. Public references provide context only and are not attached to fictional specifications as supplier proof.

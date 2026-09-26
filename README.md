@@ -1,3 +1,7 @@
+# New: public evidence and pilot offer
+
+In **Real-world context**, open the sourced Faerch SKU review. It adds a separate saved case and preserves existing edits if reopened. The dated product sheet supports a nominal tray weight, not a verified virgin-plastic saving: missing lid, baseline, recycled content and price remain unknown. The same screen links to the printable two-page proposed pilot offer, including commercial assumptions, scope and an evaluation protocol. See `PILOT_OFFER.md` and `public/resources/pilot-offer.pdf`.
+
 # PackProof
 
 **Less virgin plastic. Evidence attached.** A complete local packaging decision workbench and seven-slide motion pitch. All bundled examples are **illustrative scenarios — not measured Profi data**.

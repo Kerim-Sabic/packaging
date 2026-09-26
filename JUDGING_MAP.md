@@ -1,3 +1,7 @@
+# Additional evidence for the judging discussion
+
+The public Faerch SKU review demonstrates real-document provenance and deliberate handling of missing recycled content. It strengthens evidence-handling credibility; it does not resolve the need for a measured comparative case. `PILOT_OFFER.md` adds a proposed €1,500 six-week scope, explicit delivery economics and overrun sensitivity, a customer time-value formula, proposed renewal pricing, and an evaluation protocol. Pricing and performance targets remain unvalidated hypotheses.
+
 # PackProof × Profi — judging coverage
 
 Based on the supplied Biomentorhub × Profi challenge text. This maps demonstrable functionality to the rubric; it is not a predicted score. Digital decision-support is explicitly within the challenge scope.

@@ -1,6 +1,7 @@
 import { reviewProgress } from "../src/workflow";
 import assert from "node:assert/strict";
 import { demos } from "../src/data";
+import { publicCase } from '../src/public-case';
 import {
   totals,
   reduction,
@@ -17,6 +18,15 @@ import {
 } from "../src/domain";
 const close = (a: number | null, b: number) =>
   assert.ok(a !== null && Math.abs(a - b) < 1e-9, `${a} != ${b}`);
+const sourcedCase = publicCase();
+validate(sourcedCase);
+const sourcedCandidate = sourcedCase.candidates[1];
+assert.equal(totals(sourcedCandidate).virgin, null, 'Published tray weight must not imply virgin-plastic mass');
+assert.equal(reduction(sourcedCase, sourcedCandidate).lo, null, 'Missing baseline must not imply savings');
+assert.equal(economics(sourcedCase.candidates[0], sourcedCandidate, 0, 1).annual, null);
+assert.equal(reviewProgress(sourcedCase, sourcedCandidate).sourced, 0, 'Public sheet is not a reviewed purchasing declaration');
+assert.ok(checks(sourcedCase, sourcedCandidate).every(x => x.state === 'Unverified'));
+assert.equal(readStore(JSON.stringify({version: 1, cases: [sourcedCase]})).cases[0].candidates[1].components[0].mass, 21.38);
 const [a, b, c] = demos();
 close(totals(a.candidates[0]).virgin, 17);
 close(totals(a.candidates[1]).virgin, 9);

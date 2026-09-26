@@ -31,6 +31,7 @@ import {
   checks,
 } from "./domain";
 import { RealContext } from "./context";
+import { publicCase } from './public-case';
 import { PilotEditor, History, DecisionOverview } from "./pilot";
 import { DecisionJourney, CaseArtwork } from "./workflow";
 import { demos } from "./data";
@@ -557,7 +558,7 @@ export default function App() {
               <>
                 <div className="section-head">
                   <div>
-                    <div className="eyebrow">02 / CONFIRMED COMPONENT DATA</div>
+                    <div className="eyebrow">02 / COMPONENT INVENTORY</div>
                     <h2>Know what is in the pack.</h2>
                   </div>
                   <button
@@ -920,7 +921,14 @@ export default function App() {
               <PilotEditor key={k.id} k={k} c={c} change={safe} />
             )}
             {tab === "History" && <History k={k} />}
-            {tab === "Real-world context" && <RealContext />}
+            {tab === "Real-world context" && <RealContext onOpenCase={() => {
+              const next = publicCase();
+              validate(next);
+              setStore(s => s.cases.some(x => x.id === next.id) ? s : { ...s, cases: [...s.cases, next] });
+              setId(next.id);
+              setTab('Components');
+              window.scrollTo({ top: 0, behavior: 'instant' });
+            }} />}
             {tab === "Costs" && (
               <>
                 <div className="eyebrow">06 / BUSINESS CASE</div>

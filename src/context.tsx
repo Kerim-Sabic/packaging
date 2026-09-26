@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { publicSheet } from './public-case';
 export const references = [
   {
     id: "EC-PPWR",
@@ -66,7 +67,7 @@ export const references = [
       "Context only. Qualified people must review the relevant exact-product documentation.",
   },
 ];
-export function RealContext() {
+export function RealContext({ onOpenCase }: { onOpenCase: () => void }) {
   return (
     <div className="real-context">
       <div className="eyebrow">PUBLIC EVIDENCE / CHECKED 26 SEPTEMBER 2026</div>
@@ -93,6 +94,23 @@ export function RealContext() {
         </div>
       </div>
       <div className="reference-grid">
+        <article>
+          <div className="eyebrow">EXACT PRODUCT / PUBLIC REVIEW</div>
+          <h3>A real SKU. An honest evidence gap.</h3>
+          <p>Faerch C 2200-2S · item 2200022012. The January 2023 sheet lists a 21.38 g tray (±10%), 900 ml capacity and a 220°C maximum.</p>
+          <div className="reference-meaning">The guaranteed recycled fraction is missing. A lighter-looking claim cannot become a verified saving.</div>
+          <small>Tray body only. Current declaration, lid, baseline, quote and trial evidence still required. This is not a supplier partnership.</small>
+          <a href={publicSheet} target="_blank" rel="noreferrer">Inspect public product sheet <ArrowUpRight size={15} /></a>
+          <button className="primary" onClick={onOpenCase}>Open sourced SKU review <ArrowUpRight size={15} /></button>
+        </article>
+        <article>
+          <div className="eyebrow">PROPOSED PILOT / COMMERCIAL TEST</div>
+          <h3>Six weeks. One accountable decision.</h3>
+          <p>10 specifications → 3 alternatives → 1 trial plan. Proposed fixed fee: €1,500, excluding taxes and physical testing.</p>
+          <div className="reference-meaning">Target 30% less review time with no increase in critical errors. Procurement, quality and operations agree the release gates.</div>
+          <small>Price and targets are hypotheses. No paid customer, retail trial or measured saving is claimed.</small>
+          <a href="./resources/pilot-offer.pdf" target="_blank" rel="noreferrer">Read pilot offer and evaluation plan <ArrowUpRight size={15} /></a>
+        </article>
         {references.map((r) => (
           <article key={r.id}>
             <div className="eyebrow">

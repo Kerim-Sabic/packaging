@@ -1,3 +1,7 @@
+# Extra proof if asked for real data
+
+Open **Real-world context → Open sourced SKU review**. Show the Faerch item number and 2023 source date, then the 21.38 g nominal tray mass. Explain that the recycled fraction, lid and current declaration are missing, so PackProof refuses to produce a substantiated saving. This is a real public-document review, not a supplier partnership or validated retail result. For commercial questions, open the pilot offer in Real-world context: €1,500 is a proposed test price, with six-week scope, costs, overrun sensitivity and measurable gates.
+
 # Judge questions and live proof route
 
 Answer directly, then show the relevant screen if asked. Do not read this page during the three-minute pitch.

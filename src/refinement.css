@@ -1389,3 +1389,17 @@ textarea:focus-visible {
     flex-wrap: wrap;
   }
 }
+.component-fields,
+.component-editor,
+.field {
+  min-width: 0;
+}
+.field select {
+  min-width: 0;
+  max-width: 100%;
+  text-overflow: ellipsis;
+}
+.reference-grid .primary {
+  margin-top: 18px;
+  white-space: normal;
+}
