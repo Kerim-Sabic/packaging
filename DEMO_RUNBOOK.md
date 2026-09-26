@@ -12,21 +12,16 @@ The pitch contains seven full-slide AI-generated images, including every heading
 - Left / Back: previous artwork.
 - Home / Reset: first slide. End: closing slide.
 - Numbered controls: jump to a slide.
-- Presenter: open synchronized notes and controls in a separate tab in the same browser.
+- Presenter: open synchronized notes and controls in a separate tab in the same browser. Use Start/Pause/Reset timer to rehearse against the three-minute target; timing never advances slides automatically.
+- Script & Q&A: open the bundled printable speaker copy directly from the presentation toolbar.
 - Fullscreen: expand the presentation. Reduce motion: remove crossfades. System reduced-motion preference is also respected.
 - Open app: open the working product separately for questions, without changing the pitch.
 
 ## 180-second target
 
-1. 0–15 s: ask which package uses less virgin plastic.
-2. 15–40 s: point to 23 / 9 / 19 g total plastic, then 17 / 9 / 4.6 g virgin plastic. The lid is included. All figures are illustrative.
-3. 40–70 s: explain source → proposal → human confirmation. The image depicts a synthetic review; it is not a live extraction.
-4. 70–95 s: explain why 250 versus 220 is a mismatch and why other use conditions need independent evidence.
-5. 95–125 s: above 60% changes the bottle ranking; 60% is a tie. Explain the question to ask a supplier.
-6. 125–155 s: proposed pilot: 10 specifications, 3 shortlisted changes, 1 qualified trial. No commitment claimed.
-7. 155–180 s: ask for specifications, eligible volumes and supplier review. Hold for questions.
+Use PITCH_SCRIPT.md for the 346-word narration and exact cues. The presenter view contains the same text. Target slide times: 0–20, 20–48, 48–72, 72–97, 97–120, 120–158, 158–180 seconds. These are rehearsal targets; no timed live delivery is claimed.
 
-See PITCH_SCRIPT.md for narration. This is a target, not a timed rehearsal result.
+Read JUDGE_QA.md before presenting. The separate PackProof-speaker-script.pdf combines the spoken script, delivery cues and eight likely judge questions.
 
 ## Offline and recovery
 

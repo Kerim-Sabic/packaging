@@ -33,3 +33,9 @@ Final presentation browser was reset to the original three demonstration cases a
 Replaced all pitch reveal/manual/demo screens with one generated artwork per slide. Removed the print-mode toggle and text backup panel from the pitch. Regenerated slide 2 with both total and virgin-plastic figures. The main application is unchanged. The earlier live-calculation PDF is a legacy artifact and is not included in the revised offline presentation kit.
 
 The revised pitch passed production build and browser checks: Next advanced slide 1→2, Right advanced 2→3, End selected 7 with Next disabled, and a newly opened presenter synchronized at slide 7. Slide 2 artwork was visually checked at presentation size.
+
+## Branded app and judging-script revision
+
+Added two bespoke generated concept photographs and a five-stage review path. Production build passed. New domain checks passed for missing inputs, zero verified coverage for illustrative sources (even when marked reviewed), mismatch priority and failed-trial priority. Browser inspection confirmed both food and non-food case imagery, real source counts, and the hot-food Continue review action opening the correct 250/220 and 6/2 use-check screen. The action now scrolls to the destination rather than leaving the user below the relevant content. Tied lowest values are labelled as a tie in the overview.
+
+Replaced narration with a 346-word rubric-focused script, copied into presenter notes, with delivery cues and eight judge answers. Generated and visually reviewed all three pages of PackProof-speaker-script.pdf. The PDF is also bundled in public/resources for the pitch toolbar and offline use. Presenter timer start, pause and reset were exercised in the browser; reset returned 0:00. This does not constitute a timed spoken rehearsal or a predicted judging score.

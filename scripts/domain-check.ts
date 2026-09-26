@@ -1,3 +1,4 @@
+import { reviewProgress } from "../src/workflow";
 import assert from "node:assert/strict";
 import { demos } from "../src/data";
 import {
@@ -113,4 +114,34 @@ assert.equal(
 );
 console.log(
   "PASS: pilot validation, failure gate, nine retail checks and persisted report data.",
+);
+
+const [journeyA, journeyB, journeyC] = demos();
+assert.equal(reviewProgress(journeyA, journeyA.candidates[2]).sourced, 0);
+assert.equal(
+  reviewProgress(journeyA, journeyA.candidates[2]).next.tab,
+  "Components",
+);
+assert.equal(
+  reviewProgress(journeyB, journeyB.candidates[1]).next.tab,
+  "Use checks",
+);
+assert.equal(
+  reviewProgress(journeyC, journeyC.candidates[1]).materialComplete,
+  false,
+);
+journeyA.evidence[0].reviewed = true;
+assert.equal(
+  reviewProgress(journeyA, journeyA.candidates[2]).sourced,
+  0,
+  "Reviewed illustrative assumptions must not become sourced components",
+);
+journeyA.pilot = defaultPilot();
+journeyA.pilot.tests[0].status = "Failed";
+assert.equal(
+  reviewProgress(journeyA, journeyA.candidates[2]).next.tab,
+  "Pilot plan",
+);
+console.log(
+  "PASS: workflow prioritizes mismatches and failed tests; illustrative sources remain unverified.",
 );

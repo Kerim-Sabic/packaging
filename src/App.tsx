@@ -32,6 +32,7 @@ import {
 } from "./domain";
 import { RealContext } from "./context";
 import { PilotEditor, History, DecisionOverview } from "./pilot";
+import { DecisionJourney, CaseArtwork } from "./workflow";
 import { demos } from "./data";
 import {
   ComponentSequence,
@@ -388,7 +389,9 @@ export default function App() {
           </details>
         </header>
         <main className="work-main">
-          <div className="case-heading">
+          <div
+            className={`case-heading ${tab === "Compare" ? "with-art" : ""}`}
+          >
             <div>
               <div className="eyebrow">
                 DECISION WORKBENCH{" "}
@@ -406,6 +409,7 @@ export default function App() {
               <FileText size={17} /> Prepare pilot brief{" "}
               <ArrowRight size={16} />
             </a>
+            {tab === "Compare" && <CaseArtwork food={k.food} />}
           </div>
           {k.illustrative && (
             <div className="scenario-label">
@@ -497,6 +501,14 @@ export default function App() {
                   </div>
                   <Annual k={k} c={c} />
                 </div>
+                <DecisionJourney
+                  k={k}
+                  c={c}
+                  navigate={(next) => {
+                    setTab(next);
+                    window.scrollTo({ top: 0, behavior: "auto" });
+                  }}
+                />
                 <AnnualSequence k={k} c={c} />
                 <BriefTransition k={k} c={c} />
                 <details>

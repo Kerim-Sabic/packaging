@@ -11,7 +11,7 @@ Based on the supplied Biomentorhub × Profi challenge text. This maps demonstrab
 | Business viability | 10 | Cost model preserves negative savings; implementation cost and break-even; owner-led review plan. | Actual supplier quotations, switching costs, willingness to pay and measured review time. |
 | Scalability | 10 | Reusable cases/components, versioned import/export; proposed category and team rollout roadmap. | Team security, permissions, database/integrations and operational support are future work. |
 | User experience | 10 | Clear ranking, separate suitability gate, evidence drawer, saved cases, review decisions, pilot plan, readable reports and offline path. | Moderated usability sessions with procurement, quality and operations users. |
-| Presentation | 5 | Seven illustrated slides, live motion reveals, presenter notes, 180-second script, calculation and PDF fallbacks. | Presenter rehearsal on the actual projector and allotted judging format. |
+| Presentation | 5 | Seven image-generated slides, synchronized presenter notes, 346-word script, judge Q&A and PDF fallback. | Presenter rehearsal on the actual projector and allotted judging format. |
 
 ## Hot-food challenge coverage
 
@@ -28,3 +28,5 @@ Nine pilot checks cover component content, intended use, sealing, line performan
 **After a qualified trial:** expand within the same category before adding another category. Add source revision comparison and a shared case register after workflow value is established.
 
 **Later product work:** authenticated team access, roles, controlled storage, robust audit events, supplier-document versioning, portfolio analysis and procurement integrations. These are planned, not present capabilities.
+
+The app now adds branded generated imagery and an explicit comparison-to-trial review path. This makes evidence gaps and next actions visible without awarding a fictional readiness or judging score.

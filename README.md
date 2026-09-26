@@ -27,6 +27,10 @@ Stop terminates only recorded project processes whose PID and start time match. 
 - [Print-friendly deck](http://127.0.0.1:4173/#/print)
 - Pilot report: `#/brief/<case-id>` from **Prepare pilot brief**.
 
+## Presentation kit
+
+PITCH_SCRIPT.md contains a 346-word three-minute narration matched to the seven artwork slides and synchronized presenter notes. JUDGE_QA.md provides concise answers, a live proof route and rehearsal guidance. The delivered PackProof-speaker-script.pdf combines the script, cues and judge Q&A.
+
 ## What works
 
 Create, duplicate and edit cases; compare multiple candidates; edit component and evidence records; switch total/virgin plastic; inspect equations; independently screen use requirements; change eligible volume, adoption and costs; derive recycled-content crossover questions; prepare, print and export current-data pilot reports; export/import versioned JSON; import documented CSV; reset demos with confirmation. Plan nine retail trial checks, assign owners, record acceptance criteria and results, and review a local activity history. A failed trial produces a stop status; a passed result requires recorded criteria and an observation.
@@ -34,6 +38,8 @@ Create, duplicate and edit cases; compare multiple candidates; edit component an
 Local PDF/text extraction creates proposals with exact page-associated passages. A human can accept, correct, reject or leave them unresolved. Existing values require explicit replacement confirmation. Accepted values reference a new evidence record. Proposals remain separate in versioned browser storage. Synthetic sources stay illustrative even when accepted.
 
 The pitch is entirely image-generated: seven full-slide artworks, including all text, with a simple crossfade. Every Next or arrow press advances one slide. There are no live calculation screens or reveal steps in the pitch. The comparison artwork includes both total and virgin plastic values. The working app is separate. Keyboard navigation, synchronized presenter notes, fullscreen, reduced motion and an image-only print/PDF view are provided.
+
+The Compare view includes bespoke generated packaging artwork and an actionable five-stage review path. Source coverage counts only reviewed measured/supplier records with passages and scope; illustrative or public-reference sources never count as verified component evidence. Mismatches and failed trial checks take priority in the suggested next action.
 
 ## Offline / different laptop
 

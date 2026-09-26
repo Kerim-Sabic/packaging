@@ -273,12 +273,21 @@ export function DecisionOverview({
   const best = comparable
     ? [...k.candidates].sort((a, b) => totals(a).virgin! - totals(b).virgin!)[0]
     : null;
+  const tied = best
+    ? k.candidates.filter(
+        (x) => Math.abs(totals(x).virgin! - totals(best).virgin!) < 1e-9,
+      )
+    : [];
   return (
     <div className="decision-overview">
       <div>
         <span className="eyebrow">LOWEST CALCULATED VIRGIN PLASTIC</span>
         <b>{best ? `${fmt(totals(best).virgin)} g` : "Range / incomplete"}</b>
-        <span>{best?.name ?? "Resolve unknowns before precise ranking"}</span>
+        <span>
+          {tied.length > 1
+            ? `${tied.length} candidates tied`
+            : (best?.name ?? "Resolve unknowns before precise ranking")}
+        </span>
       </div>
       <div>
         <span className="eyebrow">SELECTED CANDIDATE / EVIDENCE</span>

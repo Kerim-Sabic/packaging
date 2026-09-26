@@ -22,22 +22,22 @@ export const titles = [
   "Give us the specification. We’ll show the decision.",
 ];
 export const timings = [
-  "0–15s",
-  "15–40s",
-  "40–70s",
-  "70–95s",
-  "95–125s",
-  "125–155s",
-  "155–180s",
+  "0–20s",
+  "20–48s",
+  "48–72s",
+  "72–97s",
+  "97–120s",
+  "120–158s",
+  "158–180s",
 ];
 export const notes = [
-  "A procurement manager sees three packages: a current tray, a lighter pouch, and a tray with high recycled content. Which uses less virgin plastic? PackProof makes that decision visible, with the evidence beside it. These are illustrative numbers, not measured Profi data.",
-  "By total plastic, the nine-gram pouch looks best. Compare virgin plastic and the order changes. The current package contains seventeen grams; the pouch, nine; the high-PCR tray, four point six. We count the lid separately. Lower virgin plastic is a reason to investigate, while functional equivalence still needs evidence.",
-  "Specifications become proposals, never automatic truth. Our local model extracts a value, its component scope, and an exact source passage. A person accepts, corrects, or rejects it. The application handles unstated lid percentages and contradictory masses. Its recorded extraction is clearly labelled; manual review works without inference. This slide illustrates the review process.",
-  "The smallest number cannot override the intended use. Here, an entered two-hundred-and-fifty-degree requirement exceeds the illustrative two-hundred-and-twenty-degree limit. That is a mismatch. Reducing temperature would only address that check. Duration, food-contact scope, protection, and line compatibility need their own evidence. Switching to post-cooking still requires actual contact conditions.",
-  "Missing information can change the ranking. For this bottle, recycled content above sixty percent beats the current bottle on virgin plastic, with other values fixed. At sixty percent they tie. PackProof turns that threshold into a precise supplier question. Separately, our tray scenario gives twelve point four tonnes of potential annual reduction at one million units and full adoption.",
-  "The output is a supplier-ready pilot brief: the baseline, component arithmetic, costs, assumptions, missing evidence, required tests, and stop criteria. Our proposed pilot reviews ten specifications, shortlists three changes, and aims for one qualified trial. Owners and acceptance limits must be agreed before testing. There is no claimed supplier or retailer commitment.",
-  "We are asking for a packaging specification sample, eligible volumes, and one supplier review. Excel can do the arithmetic. Our value is keeping document review, evidence, requirements, and the next action together. We will test that value in one purchasing decision. Less virgin plastic. Evidence attached.",
+  "Packaging uses forty percent of plastics consumed in the EU. For Profi, progress starts with a purchasing decision: which pack reduces virgin plastic while protecting the product? PackProof brings the comparison, evidence and next action together. These examples are illustrative, not measured Profi data.",
+  "The lightest pack is the nine-gram pouch. But count virgin plastic, including the lid, and the ranking changes: seventeen grams in the current tray, nine in the pouch, four point six in the high-PCR tray. At one million eligible packs and full adoption, that is twelve point four tonnes of potential annual reduction. Functional equivalence still needs validation.",
+  "The working app runs locally. A specification becomes proposed facts with component scope and an exact source passage. A person accepts, corrects or rejects each proposal. Missing values stay unknown; conflicting values need resolution. That evidence follows the calculation into a supplier-ready brief. This image illustrates the process.",
+  "Now the retail reality. A two-hundred-and-fifty-degree requirement exceeds this illustrative two-hundred-and-twenty-degree limit. PackProof flags the mismatch. Food-contact conditions, holding time, grease resistance, sealing, shelf life and line performance need their own evidence. A lower material number never substitutes for a qualified trial. Owners define measurable acceptance limits and stop criteria.",
+  "Uncertainty can become a useful question. This bottle beats the baseline only above sixty percent recycled content, with other inputs fixed. At sixty percent, they tie. PackProof asks for the exact bottle SKU and minimum content, excluding the cap. That focuses the next supplier conversation.",
+  "We propose a six-week pilot: ten real specifications, three shortlisted changes and one qualified trial. Procurement, quality and operations own the decision. We measure review time, evidence completeness, costs and product loss. Trial checks include logistics, consumer handling and local recycling evidence. Our commercial hypothesis is a paid review pilot followed by team subscriptions. Scale across categories after repeat value is demonstrated.",
+  "Today, the local workbench works; retail outcomes remain to be proven. We are asking for specification samples, eligible volumes and one supplier review. Start with one decision we can defend, then repeat it. PackProof: less virgin plastic. Evidence attached.",
 ];
 
 export const artworkFiles = [
@@ -166,6 +166,9 @@ export function Pitch({ presenter = false }: { presenter?: boolean }) {
             >
               <Maximize size={17} />
             </button>
+            <a href="./resources/speaker-script.pdf" target="_blank">
+              Script &amp; Q&amp;A
+            </a>
             <a href="#/print" target="_blank">
               Print slides
             </a>
@@ -181,6 +184,7 @@ export function Pitch({ presenter = false }: { presenter?: boolean }) {
             <div className="eyebrow">
               {timings[slide]} · slide {slide + 1}
             </div>
+            <RehearsalTimer />
             <h1>{titles[slide]}</h1>
             <p>{notes[slide]}</p>
             <div className="notice">
@@ -283,6 +287,59 @@ function ArtworkSlide({ slide }: { slide: number }) {
         illustrative. The separate PackProof application contains editable
         calculations and evidence review.
       </span>
+    </section>
+  );
+}
+
+function RehearsalTimer() {
+  const [elapsed, setElapsed] = useState(0),
+    [running, setRunning] = useState(false);
+  const base = useRef(0),
+    started = useRef(0);
+  useEffect(() => {
+    if (!running) return;
+    started.current = performance.now();
+    const tick = () =>
+      setElapsed(base.current + performance.now() - started.current);
+    tick();
+    const timer = window.setInterval(tick, 250);
+    return () => window.clearInterval(timer);
+  }, [running]);
+  const seconds = Math.floor(elapsed / 1000);
+  function pause() {
+    base.current = elapsed;
+    setRunning(false);
+  }
+  return (
+    <section
+      className={`rehearsal-timer ${seconds > 180 ? "over-time" : ""}`}
+      aria-label="Rehearsal timer"
+    >
+      <div>
+        <span className="eyebrow">REHEARSAL / 3-MINUTE TARGET</span>
+        <strong>
+          {Math.floor(seconds / 60)}:{String(seconds % 60).padStart(2, "0")}
+        </strong>
+        <small>
+          {seconds > 180
+            ? "Over target — tighten delivery"
+            : "Slides advance manually"}
+        </small>
+      </div>
+      <div>
+        <button onClick={() => (running ? pause() : setRunning(true))}>
+          {running ? "Pause timer" : elapsed ? "Resume timer" : "Start timer"}
+        </button>
+        <button
+          onClick={() => {
+            setRunning(false);
+            base.current = 0;
+            setElapsed(0);
+          }}
+        >
+          Reset timer
+        </button>
+      </div>
     </section>
   );
 }
